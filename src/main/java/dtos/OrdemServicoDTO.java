@@ -7,6 +7,8 @@ import javax.validation.constraints.NotEmpty;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.sunsytem.domain.OrdemServico;
+import com.sunsytem.enums.Prioridade;
+import com.sunsytem.enums.Status;
 
 public class OrdemServicoDTO implements Serializable {
 
@@ -68,8 +70,8 @@ public class OrdemServicoDTO implements Serializable {
 		this.dataFechamento = dataFechamento;
 	}
 
-	public Integer getPrioridade() {
-		return prioridade;
+	public Prioridade getPrioridade() {
+		return Prioridade.toEnum(this.prioridade);
 	}
 
 	public void setPrioridade(Integer prioridade) {
@@ -84,8 +86,8 @@ public class OrdemServicoDTO implements Serializable {
 		this.observacoes = observacoes;
 	}
 
-	public Integer getStatus() {
-		return status;
+	public Status getStatus() {
+		return Status.toEnum(this.status);
 	}
 
 	public void setStatus(Integer status) {

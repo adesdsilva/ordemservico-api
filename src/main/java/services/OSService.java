@@ -49,8 +49,8 @@ public class OSService {
 		OrdemServico newObj = new OrdemServico();
 		newObj.setId(objDTO.getId());
 		newObj.setObservacoes(objDTO.getObservacoes());
-		newObj.setPrioridade(Prioridade.toEnum(objDTO.getPrioridade()));
-		newObj.setStatus(Status.toEnum(objDTO.getStatus()));
+		newObj.setPrioridade(Prioridade.toEnum(objDTO.getPrioridade().getCodigo()));
+		newObj.setStatus(Status.toEnum(objDTO.getStatus().getCodigo()));
 
 		Tecnico t = tecnicoService.findById(objDTO.getTecnico());
 		Cliente c = clienteService.findById(objDTO.getCliente());
